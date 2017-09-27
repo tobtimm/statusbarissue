@@ -29,11 +29,11 @@ class ViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
+        return .lightContent
     }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return UIStatusBarAnimation.fade
+        return .fade
     }
     
     @IBAction func tappedBackground(sender: UITapGestureRecognizer) {
