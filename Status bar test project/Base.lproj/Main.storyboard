@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,51 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Status_bar_test_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsl-Gq-z4m" userLabel="Player View">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZWN-63-rWd" appends="YES" id="cc3-jJ-XQt"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIj-An-oMW" userLabel="Title Bar View">
+                                <rect key="frame" x="0.0" y="44" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.39638064680000001" green="0.79413519970000002" blue="0.070740837570000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Pey-Th-b15"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lIj-An-oMW" firstAttribute="top" secondItem="C9U-Jt-vdN" secondAttribute="top" id="KXK-yE-M2i"/>
+                            <constraint firstAttribute="trailing" secondItem="Xsl-Gq-z4m" secondAttribute="trailing" id="MSA-iB-nXu"/>
+                            <constraint firstItem="Xsl-Gq-z4m" firstAttribute="bottom" secondItem="C9U-Jt-vdN" secondAttribute="bottom" id="Mes-Ay-Pzg"/>
+                            <constraint firstItem="lIj-An-oMW" firstAttribute="width" secondItem="Xsl-Gq-z4m" secondAttribute="width" id="POa-3d-mm0"/>
+                            <constraint firstItem="C9U-Jt-vdN" firstAttribute="top" secondItem="Xsl-Gq-z4m" secondAttribute="top" id="WZl-Dv-268"/>
+                            <constraint firstItem="lIj-An-oMW" firstAttribute="centerX" secondItem="Xsl-Gq-z4m" secondAttribute="centerX" id="fgx-bb-Cmu"/>
+                            <constraint firstItem="Xsl-Gq-z4m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tcz-sA-y71"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C9U-Jt-vdN"/>
                     </view>
+                    <connections>
+                        <outlet property="titleBarView" destination="lIj-An-oMW" id="zfZ-Oe-KhX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZWN-63-rWd">
+                    <connections>
+                        <action selector="tappedBackgroundWithSender:" destination="BYZ-38-t0r" id="uV6-cG-eXm"/>
+                        <outlet property="delegate" destination="Xsl-Gq-z4m" id="UP1-8q-AH5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
         </scene>
     </scenes>
 </document>
