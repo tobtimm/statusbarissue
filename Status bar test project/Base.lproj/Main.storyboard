@@ -19,7 +19,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsl-Gq-z4m" userLabel="Player View">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ZWN-63-rWd" appends="YES" id="cc3-jJ-XQt"/>
                                 </connections>
@@ -34,7 +34,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lIj-An-oMW" firstAttribute="top" secondItem="C9U-Jt-vdN" secondAttribute="top" id="KXK-yE-M2i"/>
+                            <constraint firstItem="lIj-An-oMW" firstAttribute="top" secondItem="C9U-Jt-vdN" secondAttribute="top" priority="750" id="KXK-yE-M2i"/>
                             <constraint firstAttribute="trailing" secondItem="Xsl-Gq-z4m" secondAttribute="trailing" id="MSA-iB-nXu"/>
                             <constraint firstItem="Xsl-Gq-z4m" firstAttribute="bottom" secondItem="C9U-Jt-vdN" secondAttribute="bottom" id="Mes-Ay-Pzg"/>
                             <constraint firstItem="lIj-An-oMW" firstAttribute="width" secondItem="Xsl-Gq-z4m" secondAttribute="width" id="POa-3d-mm0"/>

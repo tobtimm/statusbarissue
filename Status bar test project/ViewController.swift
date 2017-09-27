@@ -45,10 +45,15 @@ class ViewController: UIViewController {
     }
  
     func fadeOutViews() {
-        UIView.animate(withDuration: 0.3) {
+        //Add top margin to super view
+        let topMarginConstraint = NSLayoutConstraint(item: self.titleBarView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: self.titleBarView.frame.origin.y)
+        self.view.addConstraint(topMarginConstraint)
+        UIView.animate(withDuration: 0.3, animations: {
             self.titleBarView.alpha = 0
             self.statusBarHidden = true
             self.setNeedsStatusBarAppearanceUpdate()
+        }) { (completion: Bool) in
+            self.view.removeConstraint(topMarginConstraint)
         }
     }
     
